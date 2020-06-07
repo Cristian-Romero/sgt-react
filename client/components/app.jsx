@@ -8,6 +8,16 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    this.getAverageGrade = this.getAverageGrade.bind(this);
+  }
+
+  getAverageGrade() {
+    const { grades } = this.state;
+    let gradesAdded = 0;
+    for (let k = 0; k < grades.length; k++) {
+      gradesAdded += grades[k].grade;
+    }
+    return gradesAdded / grades.length;
   }
 
   componentDidMount() {
