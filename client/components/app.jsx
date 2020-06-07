@@ -24,9 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='container'>
-        <div className='row'>
-          <Header />
-        </div>
+        <Header />
         <div className='row'>
           <GradeTable grades={ this.state.grades }/>
         </div>
