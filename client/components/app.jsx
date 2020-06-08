@@ -22,12 +22,7 @@ class App extends React.Component {
     }
   }
 
-  addGrade(grade) {
-    const newGrade = {
-      name: grade.name,
-      course: grade.course,
-      grade: grade.grade
-    };
+  addGrade(newGrade) {
     const req = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
