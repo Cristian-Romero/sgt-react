@@ -38,6 +38,32 @@ class App extends React.Component {
       });
   }
 
+  deleteGrade(id) {
+    let index;
+    for (var k = 0; k < this.state.grades.length; k++) {
+      if (id === this.state.grades[k].id) {
+        index = k;
+      }
+    }
+
+    const req = {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    };
+    fetch('./api/grades', req)
+      .then(data => data.json)
+      .this(() => {
+        const updated = this.state.grades.splice();
+        updated.splice(index, 1);
+        this.setState({
+          grades: updated
+        });
+      })
+      .catch(err => {
+        console.error(err.message);
+      });
+  }
+
   componentDidMount() {
     fetch('/api/grades')
       .then(data => data.json())
