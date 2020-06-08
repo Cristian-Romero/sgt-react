@@ -14,7 +14,12 @@ class GradeForm extends React.Component {
   }
 
   handleSubmit() {
-
+    this.props.addNewGrade(this.state);
+    this.setState({
+      name: '',
+      course: '',
+      grade: ''
+    });
   }
 
   handleChange(event) {
