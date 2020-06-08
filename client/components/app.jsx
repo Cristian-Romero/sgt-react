@@ -80,7 +80,8 @@ class App extends React.Component {
       <div className='container'>
         <Header avgGrade={ this.getAverageGrade() }/>
         <div className='row'>
-          <GradeTable grades={ this.state.grades }/>
+          <GradeTable grades={ this.state.grades }
+            removeGrade={ this.deleteGrade }/>
           <GradeForm addNewGrade={ this.addGrade } />
         </div>
       </div>
