@@ -17,6 +17,12 @@
       "name": "Douglas Crockford",
       "course": "JavaScript",
       "grade": 100
+    },
+    {
+      "name": "Naruto",
+      "course": "Shadow Clone",
+      "grade": 110,
+      "id": 33
     }
   ]
 }
