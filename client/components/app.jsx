@@ -9,6 +9,7 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   getAverageGrade() {
@@ -19,6 +20,8 @@ class App extends React.Component {
         gradesAdded += grades[k].grade;
       }
       return Math.ceil(gradesAdded / grades.length);
+    } else {
+      return 'N/A';
     }
   }
 
@@ -38,30 +41,17 @@ class App extends React.Component {
       });
   }
 
-  deleteGrade(id) {
-    let index;
-    for (var k = 0; k < this.state.grades.length; k++) {
-      if (id === this.state.grades[k].id) {
-        index = k;
-      }
-    }
-
+  deleteGrade(gradeId) {
     const req = {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }
     };
-    fetch('./api/grades', req)
-      .then(data => data.json)
-      .this(() => {
-        const updated = this.state.grades.splice();
-        updated.splice(index, 1);
-        this.setState({
-          grades: updated
-        });
-      })
-      .catch(err => {
-        console.error(err.message);
-      });
+    fetch(`api/grades/${gradeId}`, req)
+      .then(data => data.json())
+      .then(() => this.setState({
+        grades: this.state.grades.filter(item => gradeId !== item.id)
+      }));
+
   }
 
   componentDidMount() {

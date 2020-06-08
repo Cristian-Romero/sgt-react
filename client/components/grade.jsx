@@ -12,6 +12,9 @@ class Grade extends React.Component {
           <button
             type='button'
             className='btn btn-danger'
+            onClick={ () => {
+              this.props.deleteGrade(this.props.id);
+            }}
           >Delete</button>
         </td>
       </tr>
