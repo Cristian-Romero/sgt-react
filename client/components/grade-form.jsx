@@ -3,7 +3,7 @@ import React from 'react';
 class GradeForm extends React.Component {
   render() {
     return (
-      <form className='col-3'>
+      <form className='col-4'>
         <div className='input-group mb-3'>
           <div className='input-group-prepend'>
             <span className='input-group-text'>
@@ -21,7 +21,7 @@ class GradeForm extends React.Component {
         <div className='input-group mb-3'>
           <div className='input-group-prepend'>
             <span className='input-group-text'>
-              <i className='fas fa-alt' />
+              <i className='fas fa-list-alt' />
             </span>
           </div>
           <input
@@ -35,7 +35,7 @@ class GradeForm extends React.Component {
         <div className='input-group mb-3'>
           <div className='input-group-prepend'>
             <span className='input-group-text'>
-              <i className='fas fa-cap' />
+              <i className='fas fa-graduation-cap' />
             </span>
           </div>
           <input
@@ -48,7 +48,7 @@ class GradeForm extends React.Component {
         </div>
         <div>
           <button type='submit' className='btn btn-success'>Add</button>
-          <button type='reset' className='btn'>Cancel</button>
+          <button type='reset' className='btn ml-2 border'>Cancel</button>
         </div>
       </form>
     );
