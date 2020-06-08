@@ -10,6 +10,7 @@ class GradeForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   handleSubmit() {
@@ -20,6 +21,15 @@ class GradeForm extends React.Component {
     const newAddOn = {};
     newAddOn[event.target.name] = event.target.value;
     this.setState(event);
+  }
+
+  handleCancel(event) {
+    event.preventDefault();
+    this.setState({
+      name: '',
+      course: '',
+      grade: ''
+    });
   }
 
   render() {
@@ -74,7 +84,8 @@ class GradeForm extends React.Component {
             className='btn btn-success'
             onClick={ this.handleSubmit}>Add</button>
           <button type='reset'
-            className='btn ml-2 border'>Cancel</button>
+            className='btn ml-2 border'
+            onClick={ this.handleCancel }>Cancel</button>
         </div>
       </form>
     );
