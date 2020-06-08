@@ -4,7 +4,7 @@ class Grade extends React.Component {
 
   render() {
     return (
-      <tr key={ this.props.key }>
+      <tr>
         <td>{ this.props.name }</td>
         <td>{ this.props.course }</td>
         <td>{ this.props.grade }</td>
