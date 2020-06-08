@@ -4,7 +4,7 @@ import Grade from './grade';
 class GradeTable extends React.Component {
 
   render() {
-    const { grades } = this.props;
+    const { grades, removeGrade } = this.props;
     const gradeList = grades.length ? grades.map(item => {
       return (
         <Grade
@@ -12,6 +12,8 @@ class GradeTable extends React.Component {
           name={item.name}
           course={item.course}
           grade={item.grade}
+          id={item.id}
+          deleteGrade={ removeGrade }
         />
       );
     })
@@ -27,6 +29,7 @@ class GradeTable extends React.Component {
             <th>Name</th>
             <th>Course</th>
             <th>Grade</th>
+            <th>Operation</th>
           </tr>
         </thead>
         <tbody>
