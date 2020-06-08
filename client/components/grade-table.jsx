@@ -27,6 +27,7 @@ class GradeTable extends React.Component {
             <th>Name</th>
             <th>Course</th>
             <th>Grade</th>
+            <th>Operation</th>
           </tr>
         </thead>
         <tbody>
